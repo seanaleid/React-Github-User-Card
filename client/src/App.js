@@ -3,6 +3,8 @@ import './App.css';
 import axios from "axios";
 
 import UserCard from "./components/UserCard";
+import SearchAppBar from "./components/Nav";
+
 
 
 class App extends React.Component {
@@ -42,13 +44,11 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <header className="App-header">
-        <p>Hello world!</p>
+        <SearchAppBar/>
         <UserCard key={this.state.user}  user={this.state.user}/>
         {this.state.followers.map(props =>(
           <UserCard key={props.id} user={props} />
         ))}
-        </header>
       </div>
     );
   };
