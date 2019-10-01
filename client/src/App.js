@@ -8,6 +8,7 @@ import UserCard from "./components/UserCard";
 class App extends React.Component {
   state = {
     user: [],
+    followers: [],
   };
 
   componentDidMount() {
@@ -24,14 +25,29 @@ class App extends React.Component {
       .catch(err =>{
         console.log(`error`)
       })
+    axios
+      .get(`https://api.github.com/users/seanaleid/followers`)
+      .then(res => {
+        console.log(res)
+        this.setState({
+          followers: res.data
+        })
+      })
+      .catch(err => {
+        console.log(`error`)
+      })
   }
+
 
   render(){
     return (
       <div className="App">
         <header className="App-header">
         <p>Hello world!</p>
-        <UserCard key={this.state.user} user={this.state.user}/>
+        <UserCard key={this.state.user}  user={this.state.user}/>
+        {this.state.followers.map(props =>(
+          <UserCard key={props.id} user={props} />
+        ))}
         </header>
       </div>
     );
