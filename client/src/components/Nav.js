@@ -12,6 +12,10 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
+  toolBar: {
+    backgroundColor: `#F2F2F2`,
+    color: `black`,
+  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -19,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     display: 'none',
     [theme.breakpoints.up('sm')]: {
-      display: 'block',
+      display: 'flex',
     },
   },
   search: {
@@ -67,7 +71,7 @@ function SearchAppBar() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar className={classes.toolBar}>
           <IconButton
             edge="start"
             className={classes.menuButton}
@@ -77,7 +81,7 @@ function SearchAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            Welcome to Sean's GitHub Followers
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
