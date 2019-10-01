@@ -31,7 +31,7 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
         <p>Hello world!</p>
-        <UserCard />
+        <UserCard key={this.state.user} user={this.state.user}/>
         </header>
       </div>
     );
