@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+ 
 }
 
 .App-logo {
@@ -22,3 +23,15 @@
 .App-link {
   color: #09d3ac;
 }
+
+/* .cards-grid {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid blue;
+  width: 90%;
+
+} */
+
+/* .MuiGrid-root.makeStyles-gridItem-122.MuiGrid-item {
+  width: 100%;
+} */

@@ -6,7 +6,6 @@ import UserCard from "./components/UserCard";
 import SearchAppBar from "./components/Nav";
 
 
-
 class App extends React.Component {
   state = {
     user: [],
@@ -45,10 +44,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <SearchAppBar/>
-        <UserCard key={this.state.user}  user={this.state.user}/>
-        {this.state.followers.map(props =>(
-          <UserCard key={props.id} user={props} />
-        ))}
+        <div className="cards-grid">
+          <UserCard key={this.state.user}  user={this.state.user}/>
+          {this.state.followers.map(props =>(
+            <UserCard key={props.id} user={props} />
+          ))}
+        </div>
       </div>
     );
   };

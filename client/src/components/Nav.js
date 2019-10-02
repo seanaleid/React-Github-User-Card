@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from "axios";
+
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -67,6 +69,40 @@ const useStyles = makeStyles(theme => ({
 
 function SearchAppBar() {
   const classes = useStyles();
+  const [follower, setFollower] = useState([]);
+  const [query, setQuery] = useState('');
+
+useEffect(()=>{
+    axios
+        .get(`https://api.github.com/users/seanaleid/followers`)
+        .then(res=>{
+            console.log(`SearchBar axios result`, res);
+            const followerUsername = res.data;
+            console.log(`followerUsername console.log`, followerUsername);
+
+            const login = followerUsername.filter(follower =>
+                follower.login.toLowerCase().includes(query.toLowerCase())
+            );
+             console.log(`Console.log login`, login);
+             console.log(`Console.log follower state`, follower);
+             setFollower(login);
+        })
+        .catch(err=>{
+            console.log(`error`)
+        })
+}, [query]);
+
+const handleInputChange = e => {
+    e.preventDefault();
+    setQuery(e.target.value);
+  };
+
+const submitSearch = event => {
+    console.log(`submit search console.log`, event.target);
+    event.preventDefault();
+    event.target.setFollower(event);
+    setFollower('');
+}
 
   return (
     <div className={classes.root}>
@@ -94,6 +130,8 @@ function SearchAppBar() {
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
+              onChange={handleInputChange}
+              onSubmit={submitSearch}
             />
           </div>
         </Toolbar>
