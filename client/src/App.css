@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  margin: 0 auto;
  
 }
 
@@ -24,13 +24,13 @@
   color: #09d3ac;
 }
 
-/* .cards-grid {
+.cards-grid {
   display: flex;
-  flex-direction: row;
-  border: 1px solid blue;
-  width: 90%;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
 
-} */
+}
 
 /* .MuiGrid-root.makeStyles-gridItem-122.MuiGrid-item {
   width: 100%;

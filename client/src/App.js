@@ -39,6 +39,10 @@ class App extends React.Component {
       })
   }
 
+  componentDidUpdate(){
+    //setState from a prevState and use the prevState and filter through it and return that 
+    //submitForm method --> outside cDU
+  }
 
   render(){
     return (
@@ -46,9 +50,10 @@ class App extends React.Component {
         <SearchAppBar/>
         <div className="cards-grid">
           <UserCard key={this.state.user}  user={this.state.user}/>
-          {this.state.followers.map(props =>(
-            <UserCard key={props.id} user={props} />
-          ))}
+          {this.state.followers.map((follower, key) => {
+            console.log(follower);
+            return <UserCard key={key} user={follower} />
+          })}
         </div>
       </div>
     );

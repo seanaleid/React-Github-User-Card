@@ -90,6 +90,8 @@ useEffect(()=>{
         .catch(err=>{
             console.log(`error`)
         })
+
+        return document.querySelector('body')
 }, [query]);
 
 const handleInputChange = e => {

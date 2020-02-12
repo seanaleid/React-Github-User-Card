@@ -13,6 +13,7 @@ const useStyles = makeStyles(theme => ({
     card: {
       width: 345,
       marginTop: `50px`,
+      marginLeft: `50px`,
       backgroundColor: `#F2F2F2`,
     },
     media: {
@@ -28,9 +29,9 @@ const useStyles = makeStyles(theme => ({
 function UserCard(props){
     const classes = useStyles();
     const { user } = props;
-    useEffect(() =>{
-        console.log(user);
-    }, [user]);
+    // useEffect(() =>{
+    //     console.log(user);
+    // }, [user]);
 
     return(
         <Card className={classes.card}>
