@@ -1,0 +1,37 @@
+.App {
+  margin: 0 auto;
+ 
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+
+}
+
+/* .MuiGrid-root.makeStyles-gridItem-122.MuiGrid-item {
+  width: 100%;
+} */
